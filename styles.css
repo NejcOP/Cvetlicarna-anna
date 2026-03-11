@@ -699,47 +699,6 @@ img {
 }
 
 /* ==========================================
-   WhatsApp Button
-   ========================================== */
-
-.whatsapp-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 65px;
-    height: 65px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-    z-index: 9999;
-    transition: all 0.3s ease;
-    animation: pulse 2s infinite;
-}
-
-.whatsapp-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
-}
-
-.whatsapp-button svg {
-    width: 35px;
-    height: 35px;
-    color: white;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-    }
-    50% {
-        box-shadow: 0 6px 35px rgba(37, 211, 102, 0.6);
-    }
-}
-
-/* ==========================================
    Responsive Design
    ========================================== */
 
@@ -786,18 +745,6 @@ img {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-
-    .whatsapp-button {
-        width: 55px;
-        height: 55px;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    .whatsapp-button svg {
-        width: 30px;
-        height: 30px;
     }
 }
 
