@@ -297,17 +297,6 @@
     box-shadow: var(--hover-shadow);
 }
 
-.cta-btn.secondary {
-    background: #25D366;
-    color: var(--white);
-}
-
-.cta-btn.secondary:hover {
-    background: #1fb855;
-    transform: translateY(-3px);
-    box-shadow: var(--hover-shadow);
-}
-
 /* Lightbox */
 .lightbox {
     position: fixed;
