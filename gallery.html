@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerija Cvetličarne ANNA - Oglejte si naše najlepše cvetlične aranžmaje in šopke">
+    <title>Galerija | Cvetličarna ANNA</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">Cvetličarna ANNA</a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Domov</a>
+                    <a href="gallery.html" class="active">Galerija</a>
+                    <a href="index.html#about">O nas</a>
+                    <a href="order.html" class="nav-cta">Naroči cvetje</a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Odpri meni">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-menu-link">
+                <i data-lucide="home"></i>
+                Domov
+            </a>
+            <a href="gallery.html" class="mobile-menu-link active">
+                <i data-lucide="image"></i>
+                Galerija
+            </a>
+            <a href="index.html#about" class="mobile-menu-link">
+                <i data-lucide="info"></i>
+                O nas
+            </a>
+            <a href="order.html" class="mobile-menu-link">
+                <i data-lucide="shopping-bag"></i>
+                Naroči cvetje
+            </a>
+        </div>
+    </div>
+
+    <!-- Gallery Header -->
+    <section class="gallery-header">
+        <div class="container">
+            <h1 class="gallery-title">Naše Stvaritve</h1>
+            <p class="gallery-subtitle">
+                Vsak aranžma je umetniško delo, ustvarjeno z ljubeznijo in strastjo. 
+                Odkrijte našo zbirko edinstvenih cvetličnih kreacij za vsako priložnost.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar">
+                <button class="filter-btn active" data-category="vse">
+                    Vse
+                    <span class="filter-count"></span>
+                </button>
+                <button class="filter-btn" data-category="porocni">
+                    Poročni šopki
+                    <span class="filter-count"></span>
+                </button>
+                <button class="filter-btn" data-category="zalni">
+                    Žalni aranžmaji
+                    <span class="filter-count"></span>
+                </button>
+                <button class="filter-btn" data-category="darilni">
+                    Darilni program
+                    <span class="filter-count"></span>
+                </button>
+                <button class="filter-btn" data-category="dnevna">
+                    Dnevna ponudba
+                    <span class="filter-count"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be dynamically inserted here -->
+            </div>
+            
+            <!-- Loading State -->
+            <div class="loading-state" id="loadingState">
+                <div class="spinner"></div>
+                <p>Nalagamo galerijo...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <i data-lucide="search-x"></i>
+                <p>Ni rezultatov za to kategorijo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Vam je všeč kateri izmed stilov?</h2>
+                <p>Pokličite nas za unikatno naročilo, prilagojeno vašim željam in potrebam.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+38640123456" class="cta-btn primary">
+                        <i data-lucide="phone"></i>
+                        Pokliči zdaj
+                    </a>
+                    <a href="https://wa.me/38640123456?text=Pozdravljeni,%20zanima%20me%20custom%20aranžma" 
+                       class="cta-btn secondary" 
+                       target="_blank">
+                        <i data-lucide="message-circle"></i>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Zapri">
+            <i data-lucide="x"></i>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Prejšnja slika">
+            <i data-lucide="chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Naslednja slika">
+            <i data-lucide="chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxCategory"></p>
+                <p id="lightboxDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/38640123456?text=Pozdravljeni,%20zanima%20me%20naročilo%20šopka" 
+       class="whatsapp-button" 
+       target="_blank"
+       aria-label="Naroči preko WhatsApp">
+        <i data-lucide="message-circle"></i>
+    </a>
+
+    <!-- Gallery Data -->
+    <script id="galleryData" type="application/json">
+    [
+        {
+            "id": 1,
+            "title": "Klasični beli poročni šopek",
+            "category": "porocni",
+            "description": "Eleganten šopek belih vrtnic in liziант z nežnimi detajli",
+            "image": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&q=80"
+        },
+        {
+            "id": 2,
+            "title": "Rustikalni poročni aranžma",
+            "category": "porocni",
+            "description": "Naravni šopek divjih cvetlic in zelenja z rustikalnim šarmom",
+            "image": "https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=400&q=80"
+        },
+        {
+            "id": 3,
+            "title": "Rožnati poročni šopek",
+            "category": "porocni",
+            "description": "Romantičen šopek rožnatih potonik in vrtnic",
+            "image": "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=400&q=80"
+        },
+        {
+            "id": 4,
+            "title": "Dostojen beli venec",
+            "category": "zalni",
+            "description": "Klasičen žalni venec iz belih krizantem in lilij",
+            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80"
+        },
+        {
+            "id": 5,
+            "title": "Žalni aranžma z vrtnicami",
+            "category": "zalni",
+            "description": "Eleganten žalni šopek rdečih in belih vrtnic",
+            "image": "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=400&q=80"
+        },
+        {
+            "id": 6,
+            "title": "Žalni srček",
+            "category": "zalni",
+            "description": "Srčast žalni aranžma z belimi cvetlicami",
+            "image": "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=400&q=80"
+        },
+        {
+            "id": 7,
+            "title": "Premium darilna škatla",
+            "category": "darilni",
+            "description": "Luksuzna škatla z rožami in pralineji",
+            "image": "https://images.unsplash.com/photo-1591886960571-74d43a9d4166?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1591886960571-74d43a9d4166?w=400&q=80"
+        },
+        {
+            "id": 8,
+            "title": "Darilni šopek tulipanov",
+            "category": "darilni",
+            "description": "Sveži barviti tulipani v elegantnem zavoju",
+            "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80"
+        },
+        {
+            "id": 9,
+            "title": "Cvetlični darilni set",
+            "category": "darilni",
+            "description": "Komplet cvetlic z dišečimi svečkami",
+            "image": "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&q=80"
+        },
+        {
+            "id": 10,
+            "title": "Pisani mesečni šopek",
+            "category": "dnevna",
+            "description": "Sezonski miks najsvežjih cvetlic dneva",
+            "image": "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=400&q=80"
+        },
+        {
+            "id": 11,
+            "title": "Sveže poletne vrtnice",
+            "category": "dnevna",
+            "description": "Klasičen šopek rdečih vrtnic",
+            "image": "https://images.unsplash.com/photo-1518895312237-a9e23508077d?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1518895312237-a9e23508077d?w=400&q=80"
+        },
+        {
+            "id": 12,
+            "title": "Jarki pomladni aranžma",
+            "category": "dnevna",
+            "description": "Barvit miks pomladnih cvetlic",
+            "image": "https://images.unsplash.com/photo-1487070183336-b863922373d4?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1487070183336-b863922373d4?w=400&q=80"
+        },
+        {
+            "id": 13,
+            "title": "Elegantni mešani šopek",
+            "category": "dnevna",
+            "description": "Kombinacija eksotičnih in klasičnih cvetlic",
+            "image": "https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=400&q=80"
+        },
+        {
+            "id": 14,
+            "title": "Ivory poročni šopek",
+            "category": "porocni",
+            "description": "Razkošen šopek slonokoščenih vrtnic z zlatimi akcenti",
+            "image": "https://images.unsplash.com/photo-1515440866-36c7a41c65b3?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1515440866-36c7a41c65b3?w=400&q=80"
+        },
+        {
+            "id": 15,
+            "title": "Premium šopek vrtnic",
+            "category": "darilni",
+            "description": "101 rdeča vrtnica v premium izvedbi",
+            "image": "https://images.unsplash.com/photo-1503935985-b18e9f933588?w=800&q=80",
+            "thumbnail": "https://images.unsplash.com/photo-1503935985-b18e9f933588?w=400&q=80"
+        }
+    ]
+    </script>
+
+    <!-- JavaScript -->
+    <script src="navigation.js"></script>
+    <script src="gallery.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

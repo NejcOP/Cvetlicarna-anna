@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oddajte naročilo za cvetlični aranžma - Cvetličarna ANNA">
+    <title>Naročilo | Cvetličarna ANNA</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">Cvetličarna ANNA</a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Domov</a>
+                    <a href="gallery.html">Galerija</a>
+                    <a href="index.html#o-nas">O nas</a>
+                    <a href="order.html" class="nav-cta active">Naroči cvetje</a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Odpri meni">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-menu-link">
+                <i data-lucide="home"></i>
+                Domov
+            </a>
+            <a href="gallery.html" class="mobile-menu-link">
+                <i data-lucide="image"></i>
+                Galerija
+            </a>
+            <a href="index.html#o-nas" class="mobile-menu-link">
+                <i data-lucide="info"></i>
+                O nas
+            </a>
+            <a href="order.html" class="mobile-menu-link active">
+                <i data-lucide="shopping-bag"></i>
+                Naroči cvetje
+            </a>
+        </div>
+    </div>
+
+    <!-- Order Form Header -->
+    <section class="order-header">
+        <div class="container">
+            <h1 class="order-title">Oddajte svoje naročilo</h1>
+            <p class="order-subtitle">
+                Izpolnite spodnji obrazec in mi bomo pripravili unikat prilagojen vašim željam. 
+                V najkrajšem času vas bomo kontaktirali za potrditev in dogovor o plačilu.
+            </p>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="order-form-section">
+        <div class="container">
+            <form class="order-form" id="orderForm" novalidate>
+                <!-- Podatki o naročniku -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i data-lucide="user"></i>
+                        Podatki o naročniku
+                    </h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label required">Ime</label>
+                            <input 
+                                type="text" 
+                                id="firstName" 
+                                name="firstName" 
+                                class="form-input" 
+                                required
+                                placeholder="Vnesite svoje ime">
+                            <span class="error-message" id="firstNameError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="form-label required">Priimek</label>
+                            <input 
+                                type="text" 
+                                id="lastName" 
+                                name="lastName" 
+                                class="form-input" 
+                                required
+                                placeholder="Vnesite svoj priimek">
+                            <span class="error-message" id="lastNameError"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" class="form-label required">Telefon</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                class="form-input" 
+                                required
+                                placeholder="+386 40 123 456">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">E-pošta (opcijsko)</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-input"
+                                placeholder="vas@email.si">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vrsta priložnosti -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i data-lucide="calendar-heart"></i>
+                        Vrsta priložnosti
+                    </h2>
+                    
+                    <div class="form-group">
+                        <label for="occasion" class="form-label required">Izberite priložnost</label>
+                        <select id="occasion" name="occasion" class="form-select" required>
+                            <option value="">-- Izberite --</option>
+                            <option value="poroka">Poroka</option>
+                            <option value="rojstni-dan">Rojstni dan</option>
+                            <option value="zalna">Žalna slovesnost</option>
+                            <option value="obletnica">Obletnica</option>
+                            <option value="zahvala">Zahvala</option>
+                            <option value="voščilo">Voščilo</option>
+                            <option value="poslovno">Poslovno darilo</option>
+                            <option value="drugo">Drugo</option>
+                        </select>
+                        <span class="error-message" id="occasionError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occasionDetails" class="form-label">Dodatne podrobnosti</label>
+                        <textarea 
+                            id="occasionDetails" 
+                            name="occasionDetails" 
+                            class="form-textarea" 
+                            rows="3"
+                            placeholder="Opišite svojo željo ali posebne zahteve..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Podatki za dostavo -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i data-lucide="map-pin"></i>
+                        Podatki za dostavo
+                    </h2>
+                    
+                    <div class="form-group">
+                        <label for="deliveryAddress" class="form-label required">Naslov dostave</label>
+                        <input 
+                            type="text" 
+                            id="deliveryAddress" 
+                            name="deliveryAddress" 
+                            class="form-input" 
+                            required
+                            placeholder="Ulica in hišna številka, Poštna številka, Mesto">
+                        <span class="error-message" id="deliveryAddressError"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="deliveryDate" class="form-label required">Datum dostave</label>
+                            <input 
+                                type="date" 
+                                id="deliveryDate" 
+                                name="deliveryDate" 
+                                class="form-input" 
+                                required>
+                            <span class="error-message" id="deliveryDateError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deliveryTime" class="form-label required">Časovni okvir</label>
+                            <select id="deliveryTime" name="deliveryTime" class="form-select" required>
+                                <option value="">-- Izberite --</option>
+                                <option value="dopoldne">Dopoldne (8:00 - 12:00)</option>
+                                <option value="popoldne">Popoldne (12:00 - 17:00)</option>
+                                <option value="vecer">Večer (17:00 - 20:00)</option>
+                                <option value="vseeno">Kadarkoli</option>
+                            </select>
+                            <span class="error-message" id="deliveryTimeError"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Posvetilo -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i data-lucide="message-square"></i>
+                        Posvetilo in želje
+                    </h2>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Sporočilo na kartici</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            class="form-textarea" 
+                            rows="4"
+                            placeholder="Vpišite sporočilo, ki bo priloženo šopku..."
+                            maxlength="200"></textarea>
+                        <div class="char-counter">
+                            <span id="charCount">0</span> / 200 znakov
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proračun -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i data-lucide="euro"></i>
+                        Željen znesek
+                    </h2>
+                    
+                    <div class="form-group">
+                        <label for="budget" class="form-label required">Koliko želite zapraviti?</label>
+                        <select id="budget" name="budget" class="form-select" required>
+                            <option value="">-- Izberite --</option>
+                            <option value="20-30">20 - 30 €</option>
+                            <option value="30-50">30 - 50 €</option>
+                            <option value="50-80">50 - 80 €</option>
+                            <option value="80-120">80 - 120 €</option>
+                            <option value="120+">120 € ali več</option>
+                        </select>
+                        <span class="error-message" id="budgetError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customBudget" class="form-label">Ali želite navesti točen znesek?</label>
+                        <input 
+                            type="text" 
+                            id="customBudget" 
+                            name="customBudget" 
+                            class="form-input"
+                            placeholder="npr. 75 €">
+                    </div>
+                </div>
+
+                <!-- Referenčna slika -->
+                <div class="form-section">
+                    <h2 class="form-section-title">
+                        <i data-lucide="image"></i>
+                        Referenčna slika (opcijsko)
+                    </h2>
+                    
+                    <div class="form-group">
+                        <label for="referenceImage" class="form-label">Naložite sliko za referenco</label>
+                        <div class="file-upload-wrapper">
+                            <input 
+                                type="file" 
+                                id="referenceImage" 
+                                name="referenceImage" 
+                                class="file-input"
+                                accept="image/*">
+                            <label for="referenceImage" class="file-upload-label">
+                                <i data-lucide="upload"></i>
+                                <span id="fileUploadText">Izberite sliko ali povlecite sem</span>
+                            </label>
+                        </div>
+                        <p class="form-help">Lahko naložite sliko iz naše galerije ali svojo idejo (maks. 5 MB)</p>
+                        <div id="imagePreview" class="image-preview"></div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i data-lucide="send"></i>
+                        Oddaj naročilo
+                    </button>
+                    <p class="form-note">
+                        <i data-lucide="shield-check"></i>
+                        Vaši podatki so varni. Kontaktirali vas bomo v 24 urah.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-modal-content">
+            <div class="success-icon">
+                <i data-lucide="check-circle"></i>
+            </div>
+            <h2>Hvala za vaše naročilo!</h2>
+            <p>Vaše naročilo je bilo uspešno oddano. Poklicali vas bomo v najkrajšem času za potrditev in dogovor o plačilu.</p>
+            <button class="success-btn" id="successBtn">
+                <i data-lucide="arrow-left"></i>
+                Nazaj na domačo stran
+            </button>
+        </div>
+    </div>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/38640123456?text=Pozdravljeni,%20zanima%20me%20naročilo%20šopka" 
+       class="whatsapp-button" 
+       target="_blank"
+       aria-label="Naroči preko WhatsApp">
+        <i data-lucide="message-circle"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="navigation.js"></script>
+    <script src="order.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

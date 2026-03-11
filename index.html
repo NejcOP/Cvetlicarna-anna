@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cvetličarna ANNA - Umetnost, ki cveti v vašem domu. Poročni šopki, žalni aranžmaji in dostava po Sloveniji.">
+    <title>Cvetličarna ANNA | Butična cvetličarna v Sloveniji</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html">Cvetličarna ANNA</a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="active">Domov</a>
+                    <a href="gallery.html">Galerija</a>
+                    <a href="#about">O nas</a>
+                    <a href="order.html" class="nav-cta">Naroči cvetje</a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Odpri meni">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-menu-link active">
+                <i data-lucide="home"></i>
+                Domov
+            </a>
+            <a href="gallery.html" class="mobile-menu-link">
+                <i data-lucide="image"></i>
+                Galerija
+            </a>
+            <a href="#about" class="mobile-menu-link">
+                <i data-lucide="info"></i>
+                O nas
+            </a>
+            <a href="order.html" class="mobile-menu-link">
+                <i data-lucide="shopping-bag"></i>
+                Naroči cvetje
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Umetnost, ki cveti v vašem domu</h1>
+            <p class="hero-subtitle">Edinstveni cvetlični aranžmaji z dušo in ljubeznijo</p>
+            <a href="#kontakt" class="cta-button">
+                <i data-lucide="flower-2"></i>
+                Naroči šopek zdaj
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">O nas</h2>
+                    <p>
+                        Dobrodošli v Cvetličarni ANNA – butični cvetličarni, kjer se tradicija 
+                        sreča z modernim dizajnom. Že več kot 15 let ustvarjamo edinstvene cvetlične 
+                        aranžmaje, ki presegajo pričakovanja naših strank po vsej Sloveniji.
+                    </p>
+                    <p>
+                        Naša strast je ustvarjanje nepozabnih doživetij skozi cvetje. Vsak šopek, 
+                        vsak aranžma je zgodba zase – skrbno sestavljena iz svežih, kakovostnih 
+                        cvetlic, ki jih izbiramo vsak dan pri preverjevih dobaviteljih.
+                    </p>
+                    <p>
+                        Ponašamo se z osebnim pristopom, hitro dostavo po vsej Sloveniji in 
+                        absolutno predanostjo zadovoljstvu naših strank. Naj gre za poroko, 
+                        žalovanje ali poseben trenutek – z nami je vsako cvetje posebno.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i data-lucide="sparkles"></i>
+                        <p>Ročno izdelani aranžmaji</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="storitve">
+        <div class="container">
+            <h2 class="section-title centered">Naše storitve</h2>
+            <p class="section-subtitle">Izbirajte med našimi specializiranimi storitvami</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h3>Poročni šopki</h3>
+                    <p>Sanjski šopki in dekoracije za vaš posebni dan. Od neveste do poročne dvorane – poskrbimo za vsak detajl.</p>
+                    <div class="card-accent"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="flower"></i>
+                    </div>
+                    <h3>Žalni aranžmaji</h3>
+                    <p>Dostojni in lepo oblikovani žalni aranžmaji, venci in šopki za zadnje slovo vašim najdražjim.</p>
+                    <div class="card-accent"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="gift"></i>
+                    </div>
+                    <h3>Darilni program</h3>
+                    <p>Presenetite svoje najdražje s čudovitimi šopki, rastlinami in darili za vse priložnosti.</p>
+                    <div class="card-accent"></div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i data-lucide="truck"></i>
+                    </div>
+                    <h3>Dostava na dom</h3>
+                    <p>Hitra in zanesljiva dostava po vsej Sloveniji. Danes naročite, danes dostavimo (za izbrana območja).</p>
+                    <div class="card-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="galerija">
+        <div class="container">
+            <h2 class="section-title centered">Naša dela</h2>
+            <p class="section-subtitle">Sveži aranžmaji, ki pripovedujejo zgodbe</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i data-lucide="camera"></i>
+                        <p>Poročni šopek</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i data-lucide="camera"></i>
+                        <p>Vrtnice premium</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i data-lucide="camera"></i>
+                        <p>Sezonski aranžma</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i data-lucide="camera"></i>
+                        <p>Darilni šopek</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i data-lucide="camera"></i>
+                        <p>Eksotične cvetlice</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <i data-lucide="camera"></i>
+                        <p>Žalni venec</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title centered">Kaj pravijo naše stranke</h2>
+            
+            <div class="rating-summary">
+                <div class="stars">
+                    <i data-lucide="star" class="star-filled"></i>
+                    <i data-lucide="star" class="star-filled"></i>
+                    <i data-lucide="star" class="star-filled"></i>
+                    <i data-lucide="star" class="star-filled"></i>
+                    <i data-lucide="star" class="star-filled"></i>
+                </div>
+                <p class="rating-text">5.0 na Google Reviews • 200+ mnenj</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars-small">
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Absolutno najboljša cvetličarna! Šopek za mojo poroko je bil sanjski, 
+                        presegel je vsa moja pričakovanja. Profesionalnost in ljubezen do detajlov je opazna v vsakem cvetu."
+                    </p>
+                    <p class="testimonial-author">— Maja K., Ljubljana</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars-small">
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Vedno naročim preko WhatsApp in že isti dan dobim čudovit šopek. 
+                        Svež, lep in točno takšen kot sem si želela. Toplo priporočam!"
+                    </p>
+                    <p class="testimonial-author">— Petra S., Maribor</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars-small">
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                        <i data-lucide="star" class="star-filled"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Profesionalna ekipa, ki razume kaj stranke potrebujejo. 
+                        Žalni aranžma je bil dostojen in čudovit. Hvala za vašo predanost."
+                    </p>
+                    <p class="testimonial-author">— Marko T., Celje</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <footer class="footer" id="kontakt">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Cvetličarna ANNA</h3>
+                    <p class="footer-description">
+                        Vaša butična cvetličarna za vse priložnosti. 
+                        Ustvarjamo z ljubeznijo, dostavljamo s skrbjo.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <div class="contact-item">
+                        <i data-lucide="phone"></i>
+                        <a href="tel:+38640123456">+386 40 123 456</a>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail"></i>
+                        <a href="mailto:info@cveticarna-anna.si">info@cveticarna-anna.si</a>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="map-pin"></i>
+                        <span>Glavna ulica 123, 1000 Ljubljana</span>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Delovni čas</h4>
+                    <p>Pon - Pet: 8:00 - 19:00</p>
+                    <p>Sobota: 8:00 - 14:00</p>
+                    <p>Nedelja: zaprto</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Lokacija</h4>
+                    <div class="map-placeholder">
+                        <i data-lucide="map"></i>
+                        <p>Google Maps</p>
+                        <small>Kliknite za navigacijo</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cvetličarna ANNA. Vse pravice pridržane.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/38640123456?text=Pozdravljeni,%20zanima%20me%20naročilo%20šopka" 
+       class="whatsapp-button" 
+       target="_blank"
+       aria-label="Naroči preko WhatsApp">
+        <i data-lucide="message-circle"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="navigation.js"></script>
+    
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
